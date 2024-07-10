@@ -6,23 +6,13 @@ import DarkMode from './DarkMode';
 const MenuLinks = [
     {
         id: 1,
-        name: "Home",
-        link: "/#",
+        name: "Register",
+        link: "/register",
     },
     {
         id: 2,
-        name: "Register",
-        link: "/#shop",
-    },
-    {
-        id: 3,
-        name: "A - Z Business",
-        link: "/#about",
-    },
-    {
-        id: 4,
-        name: "Blogs",
-        link: "/#blog",
+        name: "Shop",
+        link: "A-Z Businesses",
     },
 ]
 
@@ -61,7 +51,7 @@ const Navbar = ({ handleOrderPopup }) => {
                 <div className = "hidden lg:block">
                     <ul className = "flex items-center gap-4">
                         {MenuLinks.map((data, index) => (
-                                <li key = {index}>
+                                <li key = {data.id}>
                                     <a 
                                     href={data.link}
                                     className = "inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
@@ -87,7 +77,7 @@ const Navbar = ({ handleOrderPopup }) => {
                                 <div className='absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white'>
                                     <ul className='space-y-2'>
                                         {DropdownLinks.map((data, index) => (
-                                                <li>
+                                                <li key = {data.id}>
                                                     <a 
                                                     className='text-gray-500 dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold'
                                                     href={data.link}>{data.name}</a>
