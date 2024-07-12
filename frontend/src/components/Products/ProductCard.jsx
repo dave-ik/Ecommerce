@@ -10,7 +10,7 @@ const ProductCard = ({ data }) => {
                     <div
                         data-aos="fade-up"
                         data-aos-delay={data.aosDelay}
-                        className='group' 
+                        className='group flex flex-col items-center' 
                         key={data.id}>
                         <div
                             className='relative'
@@ -31,7 +31,7 @@ const ProductCard = ({ data }) => {
                         </div>
                         <div className='leading-7'>
                             <h2 className='font-semibold'>{data.title}</h2>
-                            <h2 className='font-bold'>NGN{data.price}</h2>
+                            <p className='font-bold'>{data.description}</p>
                         </div>
                     </div>
                 ))}

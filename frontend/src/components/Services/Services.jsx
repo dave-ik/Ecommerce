@@ -1,30 +1,30 @@
 import React from 'react';
-import { FaCarSide, FaHeadphonesAlt, FaWallet, FaCheckCircle } from "react-icons/fa";
+import { FaMobile, FaHeadphonesAlt, FaWallet, FaRegThumbsUp } from "react-icons/fa";
 
 const ServiceData = [
     {
         id:1,
-        icon: <FaCarSide className='text-4xl md:text-5xl text-primary' />,
-        title: "Free Shipping",
-        description: "Free Shipping on all orders",
+        icon: <FaRegThumbsUp className='text-4xl md:text-5xl text-primary' />,
+        title: "Ease of Use",
+        description: "An easy to use website",
     },
     {
         id: 2,
-        icon: <FaCheckCircle className='text-4xl md:text-5xl text-primary' />,
-        title: "Safe Money",
-        description: "30 Days money back",
+        icon: <FaMobile className='text-4xl md:text-5xl text-primary' />,
+        title: "Mobile Responsive",
+        description: "Usable on mobile devices as well",
     },
     {
         id: 3,
-        icon: <FaWallet className='text-4xl md:text-5xl text-primary' />,
-        title: "Secure Payment",
-        description: "All payments secure",
+        icon: <FaHeadphonesAlt className='text-4xl md:text-5xl text-primary' />,
+        title: "Available 24/7",
+        description: "24/7 Availability",
     },
     {
         id: 4,
-        icon: <FaHeadphonesAlt className='text-4xl md:text-5xl text-primary' />,
-        title: "Online Support 24/7",
-        description: "Technical Support 24/7",
+        icon: <FaWallet className='text-4xl md:text-5xl text-primary' />,
+        title: "Secure Payment",
+        description: "COMING SOON!!!!!",
     },
 ]
 
