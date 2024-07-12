@@ -16,6 +16,7 @@ import headphone from "./assets/hero/headphone.png";
 import AOS from "aos";
 import Register from './Register';
 import Home from './Home'; // just added
+import Login from './Login';
 import Shop from './Shop';
 import "aos/dist/aos.css";
 
@@ -67,6 +68,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/A-Z Businesses" element={<Shop />} />
         </Routes>
       </Router>
