@@ -1,12 +1,13 @@
 import React from 'react';
-import { FaMobile, FaHeadphonesAlt, FaWallet, FaRegThumbsUp } from "react-icons/fa";
+import { FaMobile, FaHeadphonesAlt, FaWallet } from "react-icons/fa";
+import { RiRefund2Line } from "react-icons/ri";
 
 const ServiceData = [
     {
         id:1,
-        icon: <FaRegThumbsUp className='text-4xl md:text-5xl text-primary' />,
-        title: "Ease of Use",
-        description: "An easy to use website",
+        icon: <RiRefund2Line className='text-4xl md:text-5xl text-primary' />,
+        title: "Return & Refund",
+        description: "Money back depending on vendor",
     },
     {
         id: 2,

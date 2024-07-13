@@ -1,42 +1,20 @@
-// import React from 'react';
-
-// const Register = () => {
-//   return (
-//     <div className='register-container'>
-//         <form className="register-form">
-//             <h2>Sign Up</h2>
-//             <label htmlFor="emial">
-//                 Email:
-//                 <input type="text" />
-//             </label>
-//             <label htmlFor="password">
-//                 Password:
-//                 <input type="password" />
-//             </label>
-//             <button>Sign Up</button>
-//             <p>Already Registered? <a>Login</a></p>
-//         </form>
-//     </div>
-//   )
-// }
-
-// export default Register
-
 import React, { useState } from 'react';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
 import Blogs from './components/Blogs/Blogs.jsx';
 import { Link } from 'react-router-dom';
-import {app} from './firebase.jsx'
+import {auth} from './firebase.jsx'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-            app.auth().createUserWithEmailAndPassword(email, password)
+            await createUserWithEmailAndPassword(auth, email, password)
+            console.log("Account Created")
         } catch(err) {
             console.log(err)
         }

@@ -3,7 +3,7 @@ import Hero from "./components/Hero/Hero";
 import Category from "./components/Category/Category";
 import Category2 from "./components/Category/Category2";
 import Services from "./components/Services/Services";
-import Banner from './components/Banner/Banner';
+// import Banner from './components/Banner/Banner';
 import Partners from "./components/Partners/Partners.jsx";
 import Products from './components/Products/Products';
 import Blogs from './components/Blogs/Blogs';
@@ -29,7 +29,7 @@ const Home = ({ orderPopup, handleOrderPopup }) => {
       <Category/>
       <Category2/>
       <Services/>
-      <Banner data={BannerData}/>
+      {/* <Banner data={BannerData}/> */}
       <Products/>
       <Blogs />
       <Partners />

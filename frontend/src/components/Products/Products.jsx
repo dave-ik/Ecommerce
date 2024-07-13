@@ -16,28 +16,24 @@ const ProductsData = [
         id: 1,
         img: Img1,
         title: "Suya Plug",
-        decription: "Get your best suya",
         aosDelay: "0",
     },
     {
         id: 2,
         img: Img2,
         title: "Tekk Business",
-        decription: "Provides for SST",
         aosDelay: "200",
     },
     {
         id: 3,
         img: Img3,
         title: "Glow City",
-        decription: "Your go to skin care spot",
         aosDelay: "400",
     },
     {
         id: 4,
         img: Img4,
         title: "100Perscent",
-        decription: "Your go to scents",
         aosDelay: "600",
     }
 ]

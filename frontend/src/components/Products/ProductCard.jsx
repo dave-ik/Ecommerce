@@ -10,7 +10,7 @@ const ProductCard = ({ data }) => {
                     <div
                         data-aos="fade-up"
                         data-aos-delay={data.aosDelay}
-                        className='group flex flex-col items-center' 
+                        className='group flex flex-col items-center'
                         key={data.id}>
                         <div
                             className='relative'
@@ -20,10 +20,12 @@ const ProductCard = ({ data }) => {
                                 alt=""
                                 className='h-180px w-[260px] object-cover rounded-md'
                             />
+                            {/* hover blur */}
+                            <div className='hidden group-hover:flex absolute top-0 left-0 h-full w-full group-hover:backdrop-blur-sm duration-200'></div>
                             {/* hover button */}
-                            <div className='hidden group-hover:flex absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-full w-full text-center group-hover:backdrop-blur-sm justify-center items-center duration-200'>
+                            <div className='hidden group-hover:flex absolute bottom-10 left-1/2 transform -translate-x-1/2'>
                                 <Button
-                                    text={"Add to Cart"}
+                                    text={"Shop"}
                                     bgColor={"bg-primary"}
                                     textColor={"text-white"}
                                 />
@@ -31,7 +33,7 @@ const ProductCard = ({ data }) => {
                         </div>
                         <div className='leading-7'>
                             <h2 className='font-semibold'>{data.title}</h2>
-                            <p className='font-bold'>{data.description}</p>
+                            {/* <p className='font-bold'>{data.description}</p> */}
                         </div>
                     </div>
                 ))}

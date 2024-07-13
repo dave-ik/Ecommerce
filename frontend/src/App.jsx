@@ -1,24 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // just added
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
-// import Hero from "./components/Hero/Hero";
-// import Category from "./components/Category/Category";
-// import Category2 from "./components/Category/Category2";
-// import Services from "./components/Services/Services";
-// import Banner from './components/Banner/Banner';
-// import Partners from "./components/Partners/Partners.jsx";
-// import smartwatch2 from "./assets/category/smartwatch2-removebg-preview.png";
 import headphone from "./assets/hero/headphone.png";    
-// import Products from './components/Products/Products';
-// import Blogs from './components/Blogs/Blogs';
-// import Footer from "./components/Footer/Footer.jsx";
-// import Popup from "./components/Popup/Popup.jsx";
 import AOS from "aos";
 import Register from './Register';
 import Home from './Home'; // just added
 import Login from './Login';
 import Shop from './Shop';
 import "aos/dist/aos.css";
+import BusinessDetail from './BusinessDetail';
 
 const BannerData = {
   discount: "30% OFF",
@@ -70,6 +60,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/A-Z Businesses" element={<Shop />} />
+          <Route path="/business/:id" element={<BusinessDetail/>} />
         </Routes>
       </Router>
     </div>
@@ -77,22 +68,3 @@ const App = () => {
 };
 
 export default App
-
-
-
-
-
-
-
-// <Hero handleOrderPopup={handleOrderPopup}/>
-// <Category/>
-// <Category2/>
-// <Services/>
-// <Banner data={BannerData}/>
-// <Products/>
-// <Banner data={BannerData2}/>
-// <Blogs />
-// <Partners />
-// <Footer />
-// <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup}/>
-
