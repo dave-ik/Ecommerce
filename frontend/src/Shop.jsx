@@ -25,6 +25,7 @@ import Img19 from "./assets/shop4me/shop.jpg";
 import Img20 from "./assets/thatonedesigner/tod.jpg"
 import Image1 from "C:/Users/2122/Desktop/Ecommerce/frontend/src/assets/aashami/p4.jpg";
 import Image2 from "C:/Users/2122/Desktop/Ecommerce/frontend/src/assets/aashami/p5.jpg";
+import Image3 from "C:/Users/2122/Desktop/Ecommerce/frontend/src/assets/aashami/p6.jpg";
 import { Link } from 'react-router-dom';
 
 export const BusinessData = [
@@ -59,21 +60,31 @@ export const BusinessData = [
     {
         id: 5,
         img: Img5,
-        title: "Product 5",
-        description: "Description for product 5",
+        title: "Aashami",
+        description: (
+            <>
+                PAU mail: aashami.biz@pau.edu.ng<br />
+                WhatsApp: <a href="https://wa.link/rpe207" className="text-blue-500 underline">https://wa.link/rpe207</a><br />
+                Instagram: <span className="text-blue-500">@_shop.aashami</span>
+            </>
+        ),
         aosDelay: "800",
         products: [
             {
               img: Image1,
-              title: 'Product 1',
-              description: 'Description for Product 1'
+              title: "",
+              description: "" 
             },
             {
               img: Image2,
-              title: 'Product 2',
-              description: 'Description for Product 2'
-            }
-            // Add more products as needed
+              title: "",
+              description: "" 
+            },
+            {
+                img: Image3,
+                title: "",
+                description: "" 
+              }
           ]
     },
     {
@@ -184,6 +195,16 @@ export const BusinessData = [
 ];
 
 const Shop = () => {
+
+    // const Shop = () => {
+    // const copyToClipboard = (email) => {
+    //     navigator.clipboard.writeText(email).then(() => {
+    //         alert("Email copied to clipboard!");
+    //     }).catch(err => {
+    //         console.error("Failed to copy: ", err);
+    //     });
+    // };
+
     return (
         <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
             <h1 className='text-center text-2xl font-bold my-4'>

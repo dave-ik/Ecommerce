@@ -97,7 +97,6 @@ const BusinessDetail = () => {
           <img src={business.img} alt={business.title} className='w-1/3 h-auto object-cover mt-4 rounded-md md:mr-4' />
           <div className='mt-4 md:mt-0'>
             <p className='text-lg'>{business.description}</p>
-            <h2 className='text-xl font-bold mt-4'>Services Offered</h2>
             <ul className='list-disc pl-5 mt-2'>
               {business.services && business.services.map((service, index) => (
                 <li key={index} className='text-lg'>{service}</li>
