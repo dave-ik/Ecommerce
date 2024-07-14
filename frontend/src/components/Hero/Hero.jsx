@@ -4,6 +4,8 @@ import Image1 from "../../assets/hero/headphone.png";
 import Image2 from "../../assets/category/vr.png";
 import Image3 from "../../assets/category/macbook.png";
 import Button from "../../components/Shared/Button";
+import { useNavigate } from 'react-router-dom';
+
 
 const HeroData = [
     {
@@ -30,6 +32,8 @@ const HeroData = [
 ]
 
 const Hero = ({ handleOrderPopup }) => {
+    const navigate = useNavigate();
+
     const settings = {
         dots: false,
         arrows: false,
@@ -42,6 +46,11 @@ const Hero = ({ handleOrderPopup }) => {
         pauseOnHover: false,
         pauseOnFocus: true,
     }
+
+    const handleShopNavigation = () => {
+        navigate('/businesses'); // Navigate to the shop page
+    }
+
     return (
         <div className='container'>
             <div
@@ -83,10 +92,10 @@ const Hero = ({ handleOrderPopup }) => {
                                             data-aos-delay="300"
                                         >
                                             <Button
-                                                text="Shop By Category"
+                                                text="Shop"
                                                 bgColor="bg-primary"
                                                 textColor="text-white"
-                                                handler={handleOrderPopup}
+                                                handler={handleShopNavigation}
                                             />
                                         </div>
                                     </div>

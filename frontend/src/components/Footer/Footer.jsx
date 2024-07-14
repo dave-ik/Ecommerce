@@ -3,22 +3,38 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } fro
 
 const FooterLinks = [
   {
-    title: "House",
-    link: "/#",
+    title: "Trending Business",
+    link: "/tp",
   },
   {
-    title: "About",
-    link: "/#about",
+    title: "Best selling",
+    link: "/bs",
   },
   {
-    title: "Contact",
-    link: "/#contact",
+    title: "Top Rated",
+    link: "/tr",
   },
   {
-    title: "Blog",
-    link: "/#blog",
+    title: "Most Consistent",
+    link: "/mc",
   },
 ]
+
+const FooterLinks2 = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Sign Up",
+    link: "/register",
+  },
+  {
+    title: "Shop",
+    link: "/businesses",
+  }
+]
+
 
 const Footer = () => {
   return (
@@ -76,7 +92,7 @@ const Footer = () => {
             <div className='py-8 px-4'>
               <h1 className='text-xl font-bold sm:text-left mb-3'>Quick Links</h1>
               <ul className='space-y-3'>
-                {FooterLinks.map(
+                {FooterLinks2.map(
                   (data, index) => (
                     <li key={index}>
                       <a

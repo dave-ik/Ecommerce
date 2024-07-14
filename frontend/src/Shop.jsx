@@ -43,6 +43,30 @@ import Image21 from "./assets/book runner/p4.jpg";
 import Image22 from "./assets/cakeclock/p1.jpg";
 import Image23 from "./assets/cakeclock/p3.jpg";
 import Image24 from "./assets/cakeclock/p4.jpg";
+import Image25 from "./assets/chicsynx/p1.jpg";
+import Image26 from "./assets/chicsynx/p2.jpg";
+import Image27 from "./assets/chicsynx/p4.jpg";
+import Image28 from "./assets/cho/4600.jpg";
+import Image29 from "./assets/cho/p2.jpg";
+import Image30 from "./assets/cho/p3.jpg";
+import Image31 from "./assets/dlux/4,200.jpg"
+import Image32 from "./assets/dlux/6k.jpg"
+import Image33 from "./assets/dlux/8,300.jpg"
+import Image34 from "./assets/decorinn/p1.jpg"
+import Image35 from "./assets/decorinn/p2.jpg"
+import Image36 from "./assets/decorinn/p3.jpg"
+import Image37 from "./assets/loicette beads/p1.jpg"
+import Image38 from "./assets/loicette beads/p3.jpg"
+import Image39 from "./assets/loicette beads/p4.jpg"
+import Image40 from "./assets/sunset/4500.jpg"
+import Image41 from "./assets/sunset/5000.jpg"
+import Image42 from "./assets/sunset/p1.jpg"
+import Image43 from "./assets/anastasia/p1.jpg"
+import Image44 from "./assets/anastasia/p2.jpg"
+import Image45 from "./assets/anastasia/p3.jpg"
+import Image46 from "./assets/anastasia/p4.jpg"
+import Image47 from "./assets/anastasia/p5.jpg"
+import Image48 from "./assets/anastasia/p6.jpg"
 import { Link } from 'react-router-dom';
 
 export const BusinessData = [
@@ -108,7 +132,6 @@ export const BusinessData = [
                 <br />
                 WhatsApp: <a href="https://wa.link/3aga2m" className="text-blue-500 underline">https://wa.link/3aga2m</a><br />
                 <br />
-                {/* Instagram: <span className="text-blue-500">@_shop.aashami</span> */}
                 Phone Number: 09083836776
             </>
         ),
@@ -158,9 +181,10 @@ export const BusinessData = [
                 <br />
                 PAU mail: <span className="email-text" data-email="100perscent.biz@pau.edu.ng">100perscent.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <span className="text-blue-500">@100perscent</span><br />
+                Instagram: <a href="https://www.instagram.com/100perscenttt?igsh=a3NraGlsNzBjbXVl">@100perscenttt</a><br />
                 <br />
                 Phone Number: 08062003504
+                <br />
                 <br />
                 Personal mail: 14fdurodoye@gmail.com
             </>
@@ -209,7 +233,7 @@ export const BusinessData = [
                 <br />
                 WhatsApp: <a href="https://wa.link/rpe207" className="text-blue-500 underline">https://wa.link/rpe207</a><br />
                 <br />
-                Instagram: <span className="text-blue-500">@_shop.aashami</span>
+                Instagram: <a href="https://www.instagram.com/_shop.aashami?igsh=MWF6c3J0bTIwbjcxdg==">@_shop.aashami</a><br />
             </>
         ),
         aosDelay: "800",
@@ -276,12 +300,11 @@ export const BusinessData = [
                 <br />
                 PAU mail: <span className="email-text" data-email="cakeoclock.biz@pau.edu.ng">cakeoclock.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <span className="text-blue-500">@julies_cakeshop</span>
+                Instagram: <a href="https://www.instagram.com/julies_cakeshop?igsh=MWhyNG1ybnR6bDY2Nw==">@julies_cakeshop</a><br />
                 <br />
+                Snapchat: <a href="https://snapchat.com/t/F2P4JGKs" className="text-blue-500 underline">https://snapchat.com/t/F2P4JGKs</a><br />
                 <br />
-                WhatsApp: <a href="https://snapchat.com/t/F2P4JGKs" className="text-blue-500 underline">https://snapchat.com/t/F2P4JGKs</a><br />
-                <br />
-                Website: https://cakeoclock.bumpa.shop/
+                Website: <a href="https://cakeoclock.bumpa.shop/" className="text-blue-500 underline">https://cakeoclock.bumpa.shop/</a><br />
             </>
         ),
         aosDelay: "1200",
@@ -306,65 +329,319 @@ export const BusinessData = [
     {
         id: 8,
         img: Img8,
-        title: "It's Cake o'Clock",
-        description: "Description for product 8",
+        title: "Chic Synx",
+        description: (
+            <>
+                Yes, you read it correctly. It's time to treat your beauty routine with urgency! After all, it's the first thing people notice when you walk into a room. And let's be real, Gen Z already knows this.
+                Without further ado, allow us to introduce Chic_Synx! Your one stop for beautiful & care products.
+                Follow us on our Instagram page to start shopping now! Don’t get left behind 🙂<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="chicsynx.biz@pau.edu.ng">chicsynx.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://www.instagram.com/chic_synx?igsh=bXdrMmdxMzdkcm1i">@chic_synx</a><br />
+                <br />
+                WhatsApp: <a href="https://wa.link/zfy2lh" className="text-blue-500 underline">https://wa.link/zfy2lh</a><br />
+                <br />
+                Phone Number: 09012706690
+            </>
+        ),
         aosDelay: "1400",
+        products: [
+            {
+                img: Image25,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image26,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image27,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 9,
         img: Img9,
-        title: "Chicsynx",
-        description: "Description for product 9",
+        title: "CHO Enterprise",
+        description: (
+            <>
+                <br />
+                PAU mail: <span className="email-text" data-email="cho.biz@pau.edu.ng">cho.biz@pau.edu.ng</span><br />
+                <br />
+                Website: <a href="https://cho.myexpress.shop/" className="text-blue-500 underline">https://cho.myexpress.shop/</a><br />
+                <br />
+                WhatsApp: <a href="https://wa.me/message/N6HNCHVICUXWD1" className="text-blue-500 underline">https://wa.me/message/N6HNCHVICUXWD1</a><br />
+                <br />
+                Phone Number: 09067825200, 09076729319
+            </>
+        ),
         aosDelay: "1600",
+        products: [
+            {
+                img: Image28,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image29,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image30,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 10,
         img: Img10,
-        title: "CHO Enterprise",
-        description: "Description for product 10",
+        title: "D'Lux Body Essentials",
+        description: (
+            <>
+                Hello everyone,
+                At D’lux Body Essentials , we provide quality skincare products, hair care products, makeup products, intimate care products, lovely fragrances, wellness packs for men and women, even tone roll and many others. We have all in all, shop your beauty and cosmetic products from us. All products are nature based and made in Sweden (Oriflame). Bring your skin issues to us, we provide authentic solutions.<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="dluxbodyessentials.biz@pau.edu.ng">dluxbodyessentials.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://www.instagram.com/dlux_body?igsh=NWZqbHB1ZzRkdHdr">@dlux_body</a><br />
+                <br />
+                WhatsApp: <a href="https://wa.me/+2348165190698" className="text-blue-500 underline">https://wa.me/+2348165190698</a><br />
+            </>
+        ),
         aosDelay: "1800",
+        products: [
+            {
+                img: Image31,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image32,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image33,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 11,
         img: Img11,
-        title: "Product 11",
-        description: "Description for product 11",
+        title: "Decor Inn",
+        description: (
+            <>
+                What do we offer?<br />
+                - LEDs: to illuminate your space with vibrant and energy-efficient lights.<br />
+                - Leaf Vines: to bring the beauty of nature into your space<br />
+                - Fragrance Diffusers: to create a calming and alluring atmosphere<br />
+                - Wall Posters: to add personality and style to your room<br />
+                - Neon Signs: to make a statement and add a pop of color to your space.<br />
+                - Neon Strips: to light up your space<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="decorinn.biz@pau.edu.ng">decorinn.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://www.instagram.com/dec0r.inn?igsh=MXdlNXdzMzI1dzlzZA==">@dec0r.inn</a><br />
+                <br />
+                Phone Number: 09059397131
+            </>
+        ),
         aosDelay: "2000",
+        products: [
+            {
+                img: Image34,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image35,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image36,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 12,
         img: Img12,
-        title: "Product 12",
-        description: "Description for product 12",
+        title: "Loicette Beads",
+        description: (
+            <>
+                We are so excited to welcome you to the Loicette Beads family where elegant, handcrafted beaded jewelry pieces are produced and delivered.
+                Loicette Beads is here to empower individuals to express their personal style and creativity, and to promote the value of relationships (between oneself and others) and bonds through our meticulously crafted pieces.
+                The order window for you to place orders will be open every week from Monday to Thursday.
+                All deliveries will be made on Saturday at Student Centre by 12 pm.
+                So, if you want to revamp your style or even form a deeper connection with your creative self, message us on WhatsApp and be a part of the Bead Buddies family today!!<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="loicettebeads.biz@pau.edu.ng">loicettebeads.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://www.instagram.com/loicettebeads?igsh=NHl6eWVybXN6ZWV6">@loicettebeads</a><br />
+                <br />
+                WhatsApp: <a href="https://wa.me/message/ETMLU3VEEJHEP1" className="text-blue-500 underline">https://wa.me/message/ETMLU3VEEJHEP1</a><br />
+                <br />
+            </>
+        ),
         aosDelay: "2200",
+        products: [
+            {
+                img: Image37,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image38,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image39,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 13,
         img: Img13,
-        title: "Product 13",
-        description: "Description for product 13",
+        title: "Runner",
+        description: (
+            <>
+                We are thrilled to announce the launch of an innovative service designed to transform the way we manage our busy lives: RUNNER.
+                As students and staff, we often find ourselves juggling multiple responsibilities, from attending classes to meeting deadlines, leaving little time for essential tasks like running market errands or grocery shopping. Now, that is where RUNNER comes in.
+                Our mission is simple yet groundbreaking: to provide a seamless solution for all your errand-running needs, ensuring you never have to sacrifice precious time or energy again. With a team of dedicated and reliable runners at your service, you can delegate tasks with confidence, whether it's picking up groceries, buying foodstuffs or handling any other market and grocery related errand on your to-do list.
+                Our operation method: we would take orders throughout the week however, deliveries are only done on Mondays and Thursdays.
+                The most astounding part of RUNNER is that we deliver at very affordable rates!<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="runner.biz@pau.edu.ng">runner.biz@pau.edu.ng</span><br />
+                <br />
+                WhatsApp: <a href="https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0" className="text-blue-500 underline">https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0</a><br />
+            </>
+        ),
         aosDelay: "2400",
     },
     {
         id: 14,
         img: Img14,
-        title: "Product 14",
-        description: "Description for product 14",
+        title: "Sunset Dreams",
+        description: (
+            <>
+                Hi Dreamers,Sunset dreams is finally active. We are a sunglasses business that's here to meet your unique taste and style. <br />
+                <br />
+                PAU mail: <span className="email-text" data-email="sunsetdreams.biz@pau.edu.ng">sunsetdreams.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://www.instagram.com/__sunsetdreams?igsh=MTZvNDVyZmY1Njh6NQ==">@__sunsetdreams</a><br />
+                <br />
+                Phone Number: 09079018368
+            </>
+        ),
         aosDelay: "2600",
+        products: [
+            {
+                img: Image40,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image41,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image42,
+                title: "",
+                description: ""
+            }
+        ]
     },
     {
         id: 15,
         img: Img15,
-        title: "Product 15",
-        description: "Description for product 15",
+        title: "That One Designer",
+        description: (
+            <>
+                That One Designer is a Graphics design brand that provides better and impactful visual solutions. The idea is to provide Staff and Students of this institution with access to professional designs, regardless of their budget or experience level.<br />
+                From class presentation slides to club flyers, to events flyers and pretty much any ad material whatsoever, That One Designer is basically saying "you, worry about school work and other stuff. I'd worry about anything that has to do with design".
+                Calm, right?<br />
+                <br />
+                Now how would this work? Simple! How is this different from any other design brand?<br />
+                1. You shoot us a message <br />
+                2. We talk, Ideas spark.<br />
+                3. I'd do the magic on my end.<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="sunsetdreams.biz@pau.edu.ng">sunsetdreams.biz@pau.edu.ng</span><br />
+
+                <br />
+                Phone Number: 08071312626
+            </>
+        ),
         aosDelay: "2800",
     },
     {
         id: 16,
         img: Img16,
-        title: "Loicette Beads",
-        description: "Description for product 16",
+        title: "Shop With Anastatsia",
+        description: (
+            <>
+                <br />
+                I’ll like to briefly introduce my brand shop with Anastasia to you all.<br />
+                ‘Shop with Anastasia’ works strenuously to make available numerous aesthetic fashion wears and accessories. SA is popularly identified as a Gen-z and street-wear label and SA’s range of products are;<br />
+                - Custom made Tee-shirts, to personalized crochet bags, tote bags , crochet accessories, press on nails, all forms of clothing wears, jewelries, hair accessories.<br />
+                - Customized bottles, jotters, giftboxes, keychains/keyholders, customized necklaces, earrings, waist chains, anklets just to mention a few."<br />
+                <br />
+                PAU mail: <span className="email-text" data-email="shopwithanastasia.biz@pau.edu.ng">shopwithanastasia.biz@pau.edu.ng</span><br />
+                <br />
+                Instagram: <a href="https://instagram.com/shop.with_anastasia?igshid=YmMyMTA2M2Y= ">@shop.with_anastasia</a><br />
+                <br />
+                WhatsApp: <a href="http://wa.me/2348137981771" className="text-blue-500 underline">http://wa.me/2348137981771</a><br />
+                <br />
+            </>
+        ),
         aosDelay: "3000",
+        products: [
+            {
+                img: Image43,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image44,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image45,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image46,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image47,
+                title: "",
+                description: ""
+            },
+            {
+                img: Image48,
+                title: "",
+                description: ""
+            }
+        ]
     },
 ];
 

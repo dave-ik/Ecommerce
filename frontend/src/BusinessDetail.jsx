@@ -9,9 +9,9 @@ const BusinessDetail = () => {
   const businessId = parseInt(id, 10);
   const business = BusinessData.find((b) => b.id === businessId);
 
-  // if (!business) {
-  //   return <div className="text-center text-2xl font-bold my-4">Business not found</div>;
-  // }
+  if (!business) {
+    return <div className="text-center text-2xl font-bold my-4">Business not found</div>;
+  }
 
   return (
     <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
