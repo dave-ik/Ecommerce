@@ -3,22 +3,38 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } fro
 
 const FooterLinks = [
   {
-    title: "House",
-    link: "/#",
+    title: "Trending Business",
+    link: "/tp",
   },
   {
-    title: "About",
-    link: "/#about",
+    title: "Best selling",
+    link: "/bs",
   },
   {
-    title: "Contact",
-    link: "/#contact",
+    title: "Top Rated",
+    link: "/tr",
   },
   {
-    title: "Blog",
-    link: "/#blog",
+    title: "Most Consistent",
+    link: "/mc",
   },
 ]
+
+const FooterLinks2 = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Sign Up",
+    link: "/register",
+  },
+  {
+    title: "Shop",
+    link: "/businesses",
+  }
+]
+
 
 const Footer = () => {
   return (
@@ -34,23 +50,22 @@ const Footer = () => {
             >
               PAUmart
             </a>
-            <p><br></br></p>
-            <p>
-              <h3 class="widgettitle">Contact Us</h3>
-            </p>
-            <p className='text-gray-600 dark:text-white/70 lg:pr-24 pt-3'>
-              Lines are open:
-              <br></br>
-              Monday - Friday
-              <br></br>
-              8.30am - 5.00pm
-            </p>
-            <a
-              href="https://pau.edu.ng/"
-              target='_blank'
-              className='inline-block bg-primary/90 text-white py-2 px-4 mt-4 text-sm rounded-full ml-[-17px]'>
-              Official School Website
-            </a>
+            <div>
+              <h3 className="widgettitle">Contact Us</h3>
+              <p className='text-gray-600 dark:text-white/70 lg:pr-24 pt-3'>
+                Lines are open:
+                <br></br>
+                Monday - Friday
+                <br></br>
+                8.30am - 5.00pm
+              </p>
+              <a
+                href="https://pau.edu.ng/"
+                target='_blank'
+                className='inline-block bg-primary/90 text-white py-2 px-4 mt-4 text-sm rounded-full ml-[-17px]'>
+                Official School Website
+              </a>
+            </div>
           </div>
 
           {/* Footer links */}
@@ -77,7 +92,7 @@ const Footer = () => {
             <div className='py-8 px-4'>
               <h1 className='text-xl font-bold sm:text-left mb-3'>Quick Links</h1>
               <ul className='space-y-3'>
-                {FooterLinks.map(
+                {FooterLinks2.map(
                   (data, index) => (
                     <li key={index}>
                       <a

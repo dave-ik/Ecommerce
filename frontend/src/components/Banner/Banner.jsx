@@ -39,7 +39,7 @@ const Banner = ({data}) => {
                style={{ color: data.bgColor }} 
                className='bg-white py-2 px-4 rounded-full'
                >
-                Shop Now
+                Shop
                 </button>
             </div>
           </div>
