@@ -3,8 +3,14 @@ import Image1 from "../../assets/category/gaming.png";
 import Image2 from "../../assets/category/vr.png";
 import Image3 from "../../assets/category/speaker.png";
 import Button from '../Shared/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
+  const navigate = useNavigate();
+
+  const handleShopNavigation = () => {
+      navigate('/businesses'); // Navigate to the shop page
+  }
   return (
     <div className='py-8'>
       <div className='container'>
@@ -17,9 +23,10 @@ const Category = () => {
                 <p className='text-2xl font-semibold mb-[2px]'>With</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Laptops</p>
                 <Button
-                text="Browse"
+                text="Shop"
                 bgColor={"bg-primary"}
                 textColor={"text-white"}
+                handler={handleShopNavigation}
                 />
               </div>
             </div>
@@ -33,9 +40,10 @@ const Category = () => {
                 <p className='text-2xl font-semibold mb-[2px]'>With</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Earphones</p>
                 <Button
-                text="Browse"
+                text="Shop"
                 bgColor={"bg-white"}
                 textColor={"text-primary"}
+                handler={handleShopNavigation}
                 />
               </div>
             </div>
@@ -49,9 +57,10 @@ const Category = () => {
                 <p className='text-2xl font-semibold mb-[2px]'>With</p>
                 <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Gadgets</p>
                 <Button
-                text="Browse"
+                text="Shop"
                 bgColor={"bg-white"}
                 textColor={"text-brandBlue"}
+                handler={handleShopNavigation}
                 />
               </div>
             </div>

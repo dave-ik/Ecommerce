@@ -1,35 +1,39 @@
 import React from 'react'
 import Slider from "react-slick";
-import Image1 from "../../assets/hero/headphone.png";
-import Image2 from "../../assets/category/vr.png";
-import Image3 from "../../assets/category/macbook.png";
+import Image1 from "../../assets/hero/s1.png";
+import Image2 from "../../assets/category/s2.png";
+import Image3 from "../../assets/category/s3.png";
 import Button from "../../components/Shared/Button";
+import { useNavigate } from 'react-router-dom';
+
 
 const HeroData = [
     {
         id: 1,
         img: Image1,
-        subtitle: "Beats Solo",
-        title: "Wireless",
-        title2: "Headphone",
+        subtitle: "Your go-to scents",
+        title: "100",
+        title2: "Perscenttt",
     },
     {
         id: 2,
         img: Image2,
-        subtitle: "Beats Solo",
-        title: "Wireless",
-        title2: "Virtual",
+        subtitle: "Delicious Treats",
+        title: "With Its.....",
+        title2: "Cake O'Clock",
     },
     {
-        id: 1,
+        id: 3,
         img: Image3,
-        subtitle: "Beats Solo",
-        title: "Branded",
-        title2: "Laptops",
+        subtitle: "Glow up with...",
+        title: "Your favorite plug",
+        title2: "Glow City",
     }
 ]
 
 const Hero = ({ handleOrderPopup }) => {
+    const navigate = useNavigate();
+
     const settings = {
         dots: false,
         arrows: false,
@@ -42,6 +46,11 @@ const Hero = ({ handleOrderPopup }) => {
         pauseOnHover: false,
         pauseOnFocus: true,
     }
+
+    const handleShopNavigation = () => {
+        navigate('/businesses'); // Navigate to the shop page
+    }
+
     return (
         <div className='container'>
             <div
@@ -83,10 +92,10 @@ const Hero = ({ handleOrderPopup }) => {
                                             data-aos-delay="300"
                                         >
                                             <Button
-                                                text="Shop By Category"
+                                                text="Shop"
                                                 bgColor="bg-primary"
                                                 textColor="text-white"
-                                                handler={handleOrderPopup}
+                                                handler={handleShopNavigation}
                                             />
                                         </div>
                                     </div>
@@ -100,7 +109,8 @@ const Hero = ({ handleOrderPopup }) => {
                                             <img
                                                 src={data.img}
                                                 alt=""
-                                                className='w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] sm:scale-105 lg:scale-120 object-contain mx-auto drop-shadow-[-8px_4px_6px_rgba(0,0,0,.4)] relative  z-40'
+                                                // className='w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] sm:scale-105 lg:scale-120 object-contain mx-auto drop-shadow-[-8px_4px_6px_rgba(0,0,0,.4)] relative  z-40'
+                                                 className='w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] sm:scale-105 lg:scale-120 object-contain mx-auto drop-shadow-[-8px_4px_6px_rgba(0,0,0,.4)] relative z-40'
                                             />
                                         </div>
                                     </div>

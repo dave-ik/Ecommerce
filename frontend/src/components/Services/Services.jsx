@@ -1,30 +1,31 @@
 import React from 'react';
-import { FaCarSide, FaHeadphonesAlt, FaWallet, FaCheckCircle } from "react-icons/fa";
+import { FaMobile, FaHeadphonesAlt, FaWallet } from "react-icons/fa";
+import { RiRefund2Line } from "react-icons/ri";
 
 const ServiceData = [
     {
         id:1,
-        icon: <FaCarSide className='text-4xl md:text-5xl text-primary' />,
-        title: "Free Shipping",
-        description: "Free Shipping on all orders",
+        icon: <RiRefund2Line className='text-4xl md:text-5xl text-primary' />,
+        title: "Return & Refund",
+        description: "Money back depending on vendor",
     },
     {
         id: 2,
-        icon: <FaCheckCircle className='text-4xl md:text-5xl text-primary' />,
-        title: "Safe Money",
-        description: "30 Days money back",
+        icon: <FaMobile className='text-4xl md:text-5xl text-primary' />,
+        title: "Mobile Responsive",
+        description: "Usable on mobile devices as well",
     },
     {
         id: 3,
-        icon: <FaWallet className='text-4xl md:text-5xl text-primary' />,
-        title: "Secure Payment",
-        description: "All payments secure",
+        icon: <FaHeadphonesAlt className='text-4xl md:text-5xl text-primary' />,
+        title: "Available 24/7",
+        description: "24/7 Availability",
     },
     {
         id: 4,
-        icon: <FaHeadphonesAlt className='text-4xl md:text-5xl text-primary' />,
-        title: "Online Support 24/7",
-        description: "Technical Support 24/7",
+        icon: <FaWallet className='text-4xl md:text-5xl text-primary' />,
+        title: "Secure Payment",
+        description: "COMING SOON!!!!!",
     },
 ]
 
@@ -34,7 +35,7 @@ const Services = () => {
         <div className='container my-14 md:my-20'>
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8'>
                 {ServiceData.map((data) => (
-                    <div className='flex flex-col items-start sm:flex:row gap-4 '>
+                    <div key = {data.id} className='flex flex-col items-start sm:flex:row gap-4 '>
                         {data.icon}
                         <div>
                         <h1 className='lg:text-xl font-bold'>{data.title}</h1>
