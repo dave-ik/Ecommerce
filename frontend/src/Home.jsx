@@ -27,7 +27,7 @@ const Home = ({ orderPopup, handleOrderPopup }) => {
     <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
       <Hero handleOrderPopup={handleOrderPopup}/>
       <Category/>
-      <Category2/>
+      {/* <Category2/> */}
       <Services/>
       {/* <Banner data={BannerData}/> */}
       <Products/>

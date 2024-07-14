@@ -7,6 +7,7 @@ import Register from './Register';
 import Home from './Home'; // just added
 import Login from './Login';
 import Shop from './Shop';
+import AddBusiness from'./AddBusiness'
 import "aos/dist/aos.css";
 import BusinessDetail from './BusinessDetail';
 
@@ -61,6 +62,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/businesses" element={<Shop />} />
           <Route path="/business/:id" element={<BusinessDetail/>} />
+          <Route path="/add" element={<AddBusiness/>} />
         </Routes>
       </Router>
     </div>

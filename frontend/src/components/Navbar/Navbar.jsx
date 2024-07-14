@@ -19,6 +19,11 @@ const MenuLinks = [
         name: "Shop",
         link: "/businesses",
     },
+    {
+        id: 4,
+        name: "Add Business",
+        link: "/add"
+    }
 ]
 
 const Navbar = ({ handleOrderPopup }) => {

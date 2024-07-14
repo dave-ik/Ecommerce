@@ -9,12 +9,13 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
             await createUserWithEmailAndPassword(auth, email, password)
-            console.log("Account Created")
+            setSuccessMessage("Account Created")
         } catch(err) {
             console.log(err)
         }
@@ -38,6 +39,7 @@ const Register = () => {
             <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
           </div>
           <button type = 'submit' className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200'>Sign Up</button> <br />
+          {successMessage && <div className='mt-4 p-4 bg-green-100 text-green-800 rounded-md'>{successMessage}</div>}
           <p className='mt-4 text-sm'>Already Registered? <Link to="/login" className='text-primary hover:underline'>Login</Link></p>
         </form>
       </div>
