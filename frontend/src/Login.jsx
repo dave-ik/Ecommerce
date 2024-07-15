@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';

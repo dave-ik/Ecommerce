@@ -144,4 +144,3 @@ const AddBusiness = () => {
 };
 
 export default AddBusiness;
-
