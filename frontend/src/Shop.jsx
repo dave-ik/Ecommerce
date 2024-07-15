@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
 import Button from './components/Shared/Button';
@@ -69,6 +69,12 @@ import Image47 from "./assets/anastasia/p5.jpg"
 import Image48 from "./assets/anastasia/p6.jpg"
 import { Link } from 'react-router-dom';
 
+const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text)
+        .then(() => alert(`Copied to clipboard: ${text}`))
+        .catch(err => console.error('Failed to copy text: ', err));
+};
+
 export const BusinessData = [
     {
         id: 1,
@@ -79,7 +85,8 @@ export const BusinessData = [
                 Let SuyaPlug bring the flavours and vibes with our mouthwatering suya, spice-rubbed beef hot off the grill.
                 Our suya is seasoned to perfection with our signature blend of Nigeria's finest spices- taking your tastebuds on a trip to Flavor Town! Whether you need a study break or want to fuel up before a night out, our hearty suya is sure to satisfy your cravings. And with such an affordable price, you can order plenty to share with all your friends too. We'll always have it ready for quick pick-up. <br />
                 <br />
-                PAU mail: <span className="email-text" data-email="suyaplug.biz@pau.edu.ng">suyaplug.biz@pau.edu.ng</span><br />
+                {/* PAU mail: <span className="email-text" data-email="suyaplug.biz@pau.edu.ng">suyaplug.biz@pau.edu.ng</span><br /> */}
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("suyaplug.biz@pau.edu.ng")}>suyaplug.biz@pau.edu.ng</span><br />
                 <br />
                 Whatsapp: <a href="https://wa.me/message/QASMGISPVULGE1" className="text-blue-500 underline">https://wa.me/message/QASMGISPVULGE1 </a><br />
             </>
@@ -95,9 +102,10 @@ export const BusinessData = [
             <>
                 We are a student business designed to provide all students of sst with their required kits. We provide various engineering gears like goggles, graphs, Labcoat, Rotring sets and many more. <br />
                 <br />
-                PAU mail: <span className="email-text" data-email="tekk.biz@pau.edu.ng">tekk.biz@pau.edu.ng</span><br />
+                {/* PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("tekk.biz@pau.edu.ng")}>tekk.biz@pau.edu.ng</span><br /> */}
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("tekk.biz@pau.edu.ng")}>tekk.biz@pau.edu.ng</span><br />
                 <br />
-                Phone Number: 09121673275, 08060626152<br />
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09121673275")}>09121673275</span>, <span className="cursor-pointer " onClick={() => copyToClipboard("08060626152")}>08060626152</span><br />
                 <br />
             </>
         ),
@@ -128,11 +136,11 @@ export const BusinessData = [
             <>
                 Your go-to skin care spots <br />
                 <br />
-                PAU mail: <span className="email-text" data-email="glowcitybymoe@pau.edu.ng">glowcitybymoe@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("glowcitybymoe@pau.edu.ng")}>glowcitybymoe@pau.edu.ng</span><br />
                 <br />
                 WhatsApp: <a href="https://wa.link/3aga2m" className="text-blue-500 underline">https://wa.link/3aga2m</a><br />
                 <br />
-                Phone Number: 09083836776
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09083836776")}>09083836776</span><br />
             </>
         ),
         aosDelay: "400",
@@ -179,14 +187,13 @@ export const BusinessData = [
                 We offer inexpensive and unique scents that suit your personality and trademarks you everywhere you go.
                 Shop affordable scents today.<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="100perscent.biz@pau.edu.ng">100perscent.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("100perscent.biz@pau.edu.ng")}>100perscent.biz@pau.edu.ng</span><br />
                 <br />
                 Instagram: <a href="https://www.instagram.com/100perscenttt?igsh=a3NraGlsNzBjbXVl">@100perscenttt</a><br />
                 <br />
-                Phone Number: 08062003504
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("08062003504")}>08062003504</span><br />
                 <br />
-                <br />
-                Personal mail: 14fdurodoye@gmail.com
+                Personal mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("14fdurodoye@gmail.com")}>14fdurodoye@gmail.com</span><br />
             </>
         ),
         aosDelay: "600",
@@ -229,7 +236,7 @@ export const BusinessData = [
         title: "Aashami",
         description: (
             <>
-                PAU mail: <span className="email-text" data-email="aashami.biz@pau.edu.ng">aashami.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("aashami.biz@pau.edu.ng")}>aashami.biz@pau.edu.ng</span><br />
                 <br />
                 WhatsApp: <a href="https://wa.link/rpe207" className="text-blue-500 underline">https://wa.link/rpe207</a><br />
                 <br />
@@ -592,7 +599,7 @@ export const BusinessData = [
     {
         id: 16,
         img: Img16,
-        title: "Shop With Anastatsia",
+        title: "Shop With Anastasia",
         description: (
             <>
                 <br />
@@ -646,22 +653,36 @@ export const BusinessData = [
 ];
 
 const Shop = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    // Filter businesses based on search term
+    const filteredBusinesses = BusinessData.filter(business =>
+        business.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
             <h1 className='text-center text-2xl font-bold my-4'>
                 Approved Businesses
             </h1>
+            <div className='container mx-auto mb-4'>
+                <input
+                    type="text"
+                    placeholder="Search for businesses..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className='w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400'
+                />
+            </div>
             <div className='container mx-auto mb-10'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
-                    {/* card section */}
-                    {BusinessData.map((data) => (
+                    {/* Use filteredBusinesses instead of BusinessData */}
+                    {filteredBusinesses.map((data) => (
                         <Link to={`/business/${data.id}`} key={data.id}>
                             <div
                                 data-aos="fade-up"
                                 data-aos-delay={data.aosDelay}
-                                className='group flex flex-col items-center'
-                                key={data.id}>
+                                className='group flex flex-col items-center'>
                                 <div className='relative'>
                                     <img
                                         src={data.img}
