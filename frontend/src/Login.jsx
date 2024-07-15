@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
 import Blogs from './components/Blogs/Blogs.jsx';
-import { Link } from 'react-router-dom';
-import { auth } from './firebase.jsx'
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from './firebase.jsx';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
 
   const handleSubmit = async (e) => {
@@ -17,6 +18,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       setSuccessMessage("Login Successful!");
+      navigate('/add');
     } catch (err) {
       console.log(err)
     }
