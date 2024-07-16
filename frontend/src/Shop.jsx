@@ -88,7 +88,7 @@ export const BusinessData = [
                 {/* PAU mail: <span className="email-text" data-email="suyaplug.biz@pau.edu.ng">suyaplug.biz@pau.edu.ng</span><br /> */}
                 PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("suyaplug.biz@pau.edu.ng")}>suyaplug.biz@pau.edu.ng</span><br />
                 <br />
-                Whatsapp: <a href="https://wa.me/message/QASMGISPVULGE1" className="text-blue-500 underline">https://wa.me/message/QASMGISPVULGE1 </a><br />
+                Whatsapp: <a href="https://wa.me/message/QASMGISPVULGE1" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.me/message/QASMGISPVULGE1 </a><br />
             </>
         ),
         aosDelay: "0",
@@ -138,7 +138,7 @@ export const BusinessData = [
                 <br />
                 PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("glowcitybymoe@pau.edu.ng")}>glowcitybymoe@pau.edu.ng</span><br />
                 <br />
-                WhatsApp: <a href="https://wa.link/3aga2m" className="text-blue-500 underline">https://wa.link/3aga2m</a><br />
+                WhatsApp: <a href="https://wa.link/3aga2m" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.link/3aga2m</a><br />
                 <br />
                 Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09083836776")}>09083836776</span><br />
             </>
@@ -189,7 +189,7 @@ export const BusinessData = [
                 <br />
                 PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("100perscent.biz@pau.edu.ng")}>100perscent.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/100perscenttt?igsh=a3NraGlsNzBjbXVl">@100perscenttt</a><br />
+                Instagram: <a href="https://www.instagram.com/100perscenttt?igsh=a3NraGlsNzBjbXVl" target="_blank" rel="noopener noreferrer">@100perscenttt</a><br />
                 <br />
                 Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("08062003504")}>08062003504</span><br />
                 <br />
@@ -238,9 +238,9 @@ export const BusinessData = [
             <>
                 PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("aashami.biz@pau.edu.ng")}>aashami.biz@pau.edu.ng</span><br />
                 <br />
-                WhatsApp: <a href="https://wa.link/rpe207" className="text-blue-500 underline">https://wa.link/rpe207</a><br />
+                WhatsApp: <a href="https://wa.link/rpe207" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.link/rpe207</a><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/_shop.aashami?igsh=MWF6c3J0bTIwbjcxdg==">@_shop.aashami</a><br />
+                Instagram: <a href="https://www.instagram.com/_shop.aashami?igsh=MWF6c3J0bTIwbjcxdg==" target="_blank" rel="noopener noreferrer">@_shop.aashami</a><br />
             </>
         ),
         aosDelay: "800",
@@ -274,9 +274,9 @@ export const BusinessData = [
                 Don't waste your time and money searching for your books elsewhere. Trust us to provide you with the best service and prices for all your book's needs. Give us a try and see for yourself! <br />
                 Thank you for considering us as your trusted books supplier. We look forward to serving you. <br />
                 <br />
-                PAU mail: <span className="email-text" data-email="bookrunner.biz@pau.edu.ng">bookrunner.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("bookrunner.biz@pau.edu.ng")}>bookrunner.biz@pau.edu.ng</span><br />
                 <br />
-                Phone Number: 07044668540
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("07044668540")}>07044668540</span><br />
             </>
         ),
         aosDelay: "1000",
@@ -305,13 +305,13 @@ export const BusinessData = [
         description: (
             <>
                 <br />
-                PAU mail: <span className="email-text" data-email="cakeoclock.biz@pau.edu.ng">cakeoclock.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("cakeoclock.biz@pau.edu.ng")}>cakeoclock.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/julies_cakeshop?igsh=MWhyNG1ybnR6bDY2Nw==">@julies_cakeshop</a><br />
+                Instagram: <a href="https://www.instagram.com/julies_cakeshop?igsh=MWhyNG1ybnR6bDY2Nw==" target="_blank" rel="noopener noreferrer">@julies_cakeshop</a><br />
                 <br />
-                Snapchat: <a href="https://snapchat.com/t/F2P4JGKs" className="text-blue-500 underline">https://snapchat.com/t/F2P4JGKs</a><br />
+                Snapchat: <a href="https://snapchat.com/t/F2P4JGKs" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://snapchat.com/t/F2P4JGKs</a><br />
                 <br />
-                Website: <a href="https://cakeoclock.bumpa.shop/" className="text-blue-500 underline">https://cakeoclock.bumpa.shop/</a><br />
+                Website: <a href="https://cakeoclock.bumpa.shop/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://cakeoclock.bumpa.shop/</a><br />
             </>
         ),
         aosDelay: "1200",
@@ -343,13 +343,13 @@ export const BusinessData = [
                 Without further ado, allow us to introduce Chic_Synx! Your one stop for beautiful & care products.
                 Follow us on our Instagram page to start shopping now! Don’t get left behind 🙂<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="chicsynx.biz@pau.edu.ng">chicsynx.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("chicsynx.biz@pau.edu.ng")}>chicsynx.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/chic_synx?igsh=bXdrMmdxMzdkcm1i">@chic_synx</a><br />
+                Instagram: <a href="https://www.instagram.com/chic_synx?igsh=bXdrMmdxMzdkcm1i" target="_blank" rel="noopener noreferrer">@chic_synx</a><br />
                 <br />
-                WhatsApp: <a href="https://wa.link/zfy2lh" className="text-blue-500 underline">https://wa.link/zfy2lh</a><br />
+                WhatsApp: <a href="https://wa.link/zfy2lh" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.link/zfy2lh</a><br />
                 <br />
-                Phone Number: 09012706690
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09012706690")}>09012706690</span><br />
             </>
         ),
         aosDelay: "1400",
@@ -378,13 +378,13 @@ export const BusinessData = [
         description: (
             <>
                 <br />
-                PAU mail: <span className="email-text" data-email="cho.biz@pau.edu.ng">cho.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("cho.biz@pau.edu.ng")}>cho.biz@pau.edu.ng</span><br />
                 <br />
-                Website: <a href="https://cho.myexpress.shop/" className="text-blue-500 underline">https://cho.myexpress.shop/</a><br />
+                Website: <a href="https://cho.myexpress.shop/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://cho.myexpress.shop/</a><br />
                 <br />
-                WhatsApp: <a href="https://wa.me/message/N6HNCHVICUXWD1" className="text-blue-500 underline">https://wa.me/message/N6HNCHVICUXWD1</a><br />
+                WhatsApp: <a href="https://wa.me/message/N6HNCHVICUXWD1" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.me/message/N6HNCHVICUXWD1</a><br />
                 <br />
-                Phone Number: 09067825200, 09076729319
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09067825200")}>09067825200</span>, <span className="cursor-pointer " onClick={() => copyToClipboard(" 09076729319")}> 09076729319</span><br />
             </>
         ),
         aosDelay: "1600",
@@ -415,11 +415,11 @@ export const BusinessData = [
                 Hello everyone,
                 At D’lux Body Essentials , we provide quality skincare products, hair care products, makeup products, intimate care products, lovely fragrances, wellness packs for men and women, even tone roll and many others. We have all in all, shop your beauty and cosmetic products from us. All products are nature based and made in Sweden (Oriflame). Bring your skin issues to us, we provide authentic solutions.<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="dluxbodyessentials.biz@pau.edu.ng">dluxbodyessentials.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("dluxbodyessentials.biz@pau.edu.ng")}>dluxbodyessentials.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/dlux_body?igsh=NWZqbHB1ZzRkdHdr">@dlux_body</a><br />
+                Instagram: <a href="https://www.instagram.com/dlux_body?igsh=NWZqbHB1ZzRkdHdr" target="_blank" rel="noopener noreferrer">@dlux_body</a><br />
                 <br />
-                WhatsApp: <a href="https://wa.me/+2348165190698" className="text-blue-500 underline">https://wa.me/+2348165190698</a><br />
+                WhatsApp: <a href="https://wa.me/+2348165190698" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.me/+2348165190698</a><br />
             </>
         ),
         aosDelay: "1800",
@@ -455,11 +455,11 @@ export const BusinessData = [
                 - Neon Signs: to make a statement and add a pop of color to your space.<br />
                 - Neon Strips: to light up your space<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="decorinn.biz@pau.edu.ng">decorinn.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("decorinn.biz@pau.edu.ng")}>decorinn.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/dec0r.inn?igsh=MXdlNXdzMzI1dzlzZA==">@dec0r.inn</a><br />
+                Instagram: <a href="https://www.instagram.com/dec0r.inn?igsh=MXdlNXdzMzI1dzlzZA==" target="_blank" rel="noopener noreferrer">@dec0r.inn</a><br />
                 <br />
-                Phone Number: 09059397131
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09059397131")}>09059397131</span>
             </>
         ),
         aosDelay: "2000",
@@ -493,11 +493,11 @@ export const BusinessData = [
                 All deliveries will be made on Saturday at Student Centre by 12 pm.
                 So, if you want to revamp your style or even form a deeper connection with your creative self, message us on WhatsApp and be a part of the Bead Buddies family today!!<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="loicettebeads.biz@pau.edu.ng">loicettebeads.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("loicettebeads.biz@pau.edu.ng")}>loicettebeads.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/loicettebeads?igsh=NHl6eWVybXN6ZWV6">@loicettebeads</a><br />
+                Instagram: <a href="https://www.instagram.com/loicettebeads?igsh=NHl6eWVybXN6ZWV6" target="_blank" rel="noopener noreferrer">@loicettebeads</a><br />
                 <br />
-                WhatsApp: <a href="https://wa.me/message/ETMLU3VEEJHEP1" className="text-blue-500 underline">https://wa.me/message/ETMLU3VEEJHEP1</a><br />
+                WhatsApp: <a href="https://wa.me/message/ETMLU3VEEJHEP1" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.me/message/ETMLU3VEEJHEP1</a><br />
                 <br />
             </>
         ),
@@ -532,9 +532,9 @@ export const BusinessData = [
                 Our operation method: we would take orders throughout the week however, deliveries are only done on Mondays and Thursdays.
                 The most astounding part of RUNNER is that we deliver at very affordable rates!<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="runner.biz@pau.edu.ng">runner.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("runner.biz@pau.edu.ng")}>runner.biz@pau.edu.ng</span><br />
                 <br />
-                WhatsApp: <a href="https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0" className="text-blue-500 underline">https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0</a><br />
+                WhatsApp: <a href="https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://api.whatsapp.com/send?phone=%2B2347034192325&text&app_absent=0</a><br />
             </>
         ),
         aosDelay: "2400",
@@ -547,11 +547,11 @@ export const BusinessData = [
             <>
                 Hi Dreamers,Sunset dreams is finally active. We are a sunglasses business that's here to meet your unique taste and style. <br />
                 <br />
-                PAU mail: <span className="email-text" data-email="sunsetdreams.biz@pau.edu.ng">sunsetdreams.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("sunsetdreams.biz@pau.edu.ng")}>sunsetdreams.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://www.instagram.com/__sunsetdreams?igsh=MTZvNDVyZmY1Njh6NQ==">@__sunsetdreams</a><br />
+                Instagram: <a href="https://www.instagram.com/__sunsetdreams?igsh=MTZvNDVyZmY1Njh6NQ==" target="_blank" rel="noopener noreferrer">@__sunsetdreams</a><br />
                 <br />
-                Phone Number: 09079018368
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("09079018368")}>09079018368</span>
             </>
         ),
         aosDelay: "2600",
@@ -588,10 +588,9 @@ export const BusinessData = [
                 2. We talk, Ideas spark.<br />
                 3. I'd do the magic on my end.<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="sunsetdreams.biz@pau.edu.ng">sunsetdreams.biz@pau.edu.ng</span><br />
-
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("thatonedesigner@pau.edu.ng")}>thatonedesigner@pau.edu.ng</span><br />
                 <br />
-                Phone Number: 08071312626
+                Phone Number: <span className="cursor-pointer" onClick={() => copyToClipboard("08071312626")}>08071312626</span>
             </>
         ),
         aosDelay: "2800",
@@ -608,11 +607,11 @@ export const BusinessData = [
                 - Custom made Tee-shirts, to personalized crochet bags, tote bags , crochet accessories, press on nails, all forms of clothing wears, jewelries, hair accessories.<br />
                 - Customized bottles, jotters, giftboxes, keychains/keyholders, customized necklaces, earrings, waist chains, anklets just to mention a few."<br />
                 <br />
-                PAU mail: <span className="email-text" data-email="shopwithanastasia.biz@pau.edu.ng">shopwithanastasia.biz@pau.edu.ng</span><br />
+                PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("shopwithanastasia.biz@pau.edu.ng")}>shopwithanastasia.biz@pau.edu.ng</span><br />
                 <br />
-                Instagram: <a href="https://instagram.com/shop.with_anastasia?igshid=YmMyMTA2M2Y= ">@shop.with_anastasia</a><br />
+                Instagram: <a href="https://instagram.com/shop.with_anastasia?igshid=YmMyMTA2M2Y= " target="_blank" rel="noopener noreferrer">@shop.with_anastasia</a><br />
                 <br />
-                WhatsApp: <a href="http://wa.me/2348137981771" className="text-blue-500 underline">http://wa.me/2348137981771</a><br />
+                WhatsApp: <a href="http://wa.me/2348137981771" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">http://wa.me/2348137981771</a><br />
                 <br />
             </>
         ),
