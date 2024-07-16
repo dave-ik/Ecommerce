@@ -9,14 +9,14 @@ import { useNavigate } from 'react-router-dom';
 
 const HeroData = [
     {
-        id: 1,
+        id: 4,
         img: Image1,
         subtitle: "Your go-to scents",
         title: "100",
         title2: "Perscenttt",
     },
     {
-        id: 2,
+        id: 7,
         img: Image2,
         subtitle: "Delicious Treats",
         title: "With Its.....",
@@ -47,8 +47,8 @@ const Hero = ({ handleOrderPopup }) => {
         pauseOnFocus: true,
     }
 
-    const handleShopNavigation = () => {
-        navigate('/businesses'); // Navigate to the shop page
+    const handleShopNavigation = (id) => {
+        navigate(`/business/${id}`); // Navigate to the details page of the business
     }
 
     return (
@@ -95,7 +95,7 @@ const Hero = ({ handleOrderPopup }) => {
                                                 text="Shop"
                                                 bgColor="bg-primary"
                                                 textColor="text-white"
-                                                handler={handleShopNavigation}
+                                                handler={() => handleShopNavigation(data.id)} 
                                             />
                                         </div>
                                     </div>

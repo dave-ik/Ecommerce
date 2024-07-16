@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
 
 const FooterLinks = [
@@ -35,8 +35,32 @@ const FooterLinks2 = [
   }
 ]
 
+const Popup = ({ message, onClose }) => (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
+      <p className="text-gray-800 dark:text-gray-200 text-center text-lg font-semibold">{message}</p>
+      <button
+        className="mt-4 w-full py-2 bg-primary text-white rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300"
+        onClick={onClose}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+);
+
 
 const Footer = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleLinkClick = (event) => {
+    event.preventDefault();
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
   return (
     <div className='dark:bg-gray-950'>
       <div className="container">
@@ -77,7 +101,8 @@ const Footer = () => {
                   (data, index) => (
                     <li key={index}>
                       <a
-                        href={data.link}
+                        href={data.link} 
+                        onClick={handleLinkClick}
                         className='text-gray-600 dark:text-gray-400 hover:dark:text-white hover:text-black duration-300'
                       >
                         {data.title}
@@ -127,13 +152,13 @@ const Footer = () => {
 
                 {/* social links */}
                 <div className='flex items-center gap-3 mt-6'>
-                  <a href="#">
+                <a href="https://www.instagram.com/pau_nigeria/" target="_blank" rel="noopener noreferrer">
                     <FaInstagram className='text-3xl hover:text-primary duration-300' />
                   </a>
-                  <a href="#">
+                  <a href="https://www.facebook.com/PanAtlanticUniversityNG/" target="_blank" rel="noopener noreferrer">
                     <FaFacebook className='text-3xl hover:text-primary duration-300' />
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/school/pan-atlantic-university/" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin className='text-3xl hover:text-primary duration-300' />
                   </a>
                 </div>
@@ -142,6 +167,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {isPopupOpen && <Popup message="Coming Soon!" onClose={closePopup} />}
     </div>
   )
 }

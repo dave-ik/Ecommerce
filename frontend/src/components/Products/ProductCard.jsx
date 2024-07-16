@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const ProductCard = ({ data }) => {
     const navigate = useNavigate();
 
-  const handleShopNavigation = () => {
-      navigate('/businesses'); // Navigate to the shop page
-  }
+    const handleShopNavigation = (id) => {
+        navigate(`/business/${id}`); 
+    }
     return (
         <div className='mb-10'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
@@ -34,7 +34,7 @@ const ProductCard = ({ data }) => {
                                     text={"Shop"}
                                     bgColor={"bg-primary"}
                                     textColor={"text-white"}
-                                    handler={handleShopNavigation}
+                                    handler={() => handleShopNavigation(data.id)}
 
                                 />
                             </div>

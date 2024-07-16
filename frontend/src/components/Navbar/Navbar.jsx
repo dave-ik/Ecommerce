@@ -11,13 +11,13 @@ const MenuLinks = [
     },
     {
         id: 2,
-        name: "Sign Up",
-        link: "/register",
+        name: "Shop",
+        link: "/businesses",
     },
     {
         id: 3,
-        name: "Shop",
-        link: "/businesses",
+        name: "Sign Up",
+        link: "/register",
     },
     {
         id: 4,
@@ -28,14 +28,17 @@ const MenuLinks = [
 
 const Popup = ({ message, onClose }) => (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-            <p className="text-gray-800 dark:text-gray-200 text-center">{message}</p>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-600" onClick={onClose}>
-                Close
-            </button>
-        </div>
+      <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
+        <p className="text-gray-800 dark:text-gray-200 text-center text-lg font-semibold">{message}</p>
+        <button
+          className="mt-4 w-full py-2 bg-primary text-white rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300"
+          onClick={onClose}
+        >
+          Close
+        </button>
+      </div>
     </div>
-);
+  );
 
 const Navbar = ({ handleOrderPopup }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -93,9 +96,7 @@ const Navbar = ({ handleOrderPopup }) => {
                         {/* Cart section */}
                         <button className='relative p-3' onClick={handleCartClick}>
                             <FaCartShopping className='text-xl text-gray-600 dark:text-gray-400' />
-                            <div className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'>
-                                
-                            </div>
+                            <div className='w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs'></div>
                         </button>
                         {/* Dark Mode section */}
                         <div>
