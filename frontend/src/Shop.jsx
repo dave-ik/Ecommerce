@@ -85,7 +85,6 @@ export const BusinessData = [
                 Let SuyaPlug bring the flavours and vibes with our mouthwatering suya, spice-rubbed beef hot off the grill.
                 Our suya is seasoned to perfection with our signature blend of Nigeria's finest spices- taking your tastebuds on a trip to Flavor Town! Whether you need a study break or want to fuel up before a night out, our hearty suya is sure to satisfy your cravings. And with such an affordable price, you can order plenty to share with all your friends too. We'll always have it ready for quick pick-up. <br />
                 <br />
-                {/* PAU mail: <span className="email-text" data-email="suyaplug.biz@pau.edu.ng">suyaplug.biz@pau.edu.ng</span><br /> */}
                 PAU mail: <span className="email-text cursor-pointer" onClick={() => copyToClipboard("suyaplug.biz@pau.edu.ng")}>suyaplug.biz@pau.edu.ng</span><br />
                 <br />
                 Whatsapp: <a href="https://wa.me/message/QASMGISPVULGE1" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">https://wa.me/message/QASMGISPVULGE1 </a><br />
@@ -654,7 +653,6 @@ export const BusinessData = [
 const Shop = () => {
     const [searchTerm, setSearchTerm] = useState('');
     
-    // Filter businesses based on search term
     const filteredBusinesses = BusinessData.filter(business =>
         business.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -675,7 +673,6 @@ const Shop = () => {
             </div>
             <div className='container mx-auto mb-10'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
-                    {/* Use filteredBusinesses instead of BusinessData */}
                     {filteredBusinesses.map((data) => (
                         <Link to={`/business/${data.id}`} key={data.id}>
                             <div

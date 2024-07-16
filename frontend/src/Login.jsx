@@ -23,6 +23,7 @@ const Login = () => {
     e.preventDefault();
     if (!isValidEmail(email)) {
       setErrorMessage("Enter a valid email");
+      setTimeout(() => setErrorMessage(''), 3000);
       return;
     }
     try {
@@ -31,7 +32,8 @@ const Login = () => {
       navigate('/add');
     } catch (err) {
       console.log(err);
-      setErrorMessage("Login failed. Please check your credentials.");
+      setErrorMessage("Login failed. Check your credentials. Or Create account if you don't have");
+      setTimeout(() => setErrorMessage(''), 3000);
     }
   };
 
