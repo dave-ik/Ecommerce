@@ -89,6 +89,8 @@ const Navbar = ({ handleOrderPopup }) => {
     const [userEmail, setUserEmail] = useState(null);
     const [isUserDetailsPopupOpen, setIsUserDetailsPopupOpen] = useState(false);
     const [isNoUserPopupOpen, setIsNoUserPopupOpen] = useState(false);
+    const [logoutMessage, setLogoutMessage] = useState('');
+
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -105,8 +107,13 @@ const Navbar = ({ handleOrderPopup }) => {
     const handleLogout = async () => {
         try {
             await signOut(auth);
-            setUserEmail(null); 
-            closeUserDetailsPopup(); 
+            setUserEmail(null);
+            setLogoutMessage('Successfully logged out');
+            closeUserDetailsPopup();
+
+            setTimeout(() => {
+                setLogoutMessage('');
+            }, 3000);
         } catch (error) {
             console.error("Error signing out: ", error);
         }
@@ -166,6 +173,10 @@ const Navbar = ({ handleOrderPopup }) => {
                         <button onClick={handleUserDetailsClick} className="flex items-center">
                             {userEmail ? <FaUserCheck className="text-xl text-gray-600 dark:text-gray-400" /> : <FaUserTimes className="text-xl text-gray-600 dark:text-gray-400" />}
                         </button>
+
+                        {logoutMessage && (
+                            <div className="text-green-500 text-sm ml-2">{logoutMessage}</div>
+                        )}
 
                         <button className='relative p-3' onClick={handleCartClick}>
                             <FaCartShopping className='text-xl text-gray-600 dark:text-gray-400' />
