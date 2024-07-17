@@ -23,7 +23,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!isValidEmail(email)) {
-            setErrorMessage("Please enter a valid email ending with @pau.edu.ng");
+            setErrorMessage("Enter a valid email");
             setTimeout(() => setErrorMessage(''), 3000);
             return;
         }

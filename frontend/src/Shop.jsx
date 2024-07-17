@@ -1,4 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { auth } from './firebase'; // Ensure this path is correct
+import { onAuthStateChanged } from 'firebase/auth';
+import { FaUserTimes, FaUserCheck } from "react-icons/fa";
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
 import Button from './components/Shared/Button';
@@ -652,63 +656,142 @@ export const BusinessData = [
 
 const Shop = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [userEmail, setUserEmail] = useState(null);
+    const [isNoUserPopupOpen, setIsNoUserPopupOpen] = useState(false);
+    const [message, setMessage] = useState(null); // just added
+    const location = useLocation(); // just added
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUserEmail(user.email);
+            } else {
+                setUserEmail(null);
+            }
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    useEffect(() => {
+        if (location.state && location.state.message) {
+          setMessage(location.state.message);
+          const timer = setTimeout(() => {
+            setMessage(null);
+          }, 3000); // Hide message after 5 seconds
     
+          return () => clearTimeout(timer);
+        }
+      }, [location.state]); // just added
+    
+
     const filteredBusinesses = BusinessData.filter(business =>
         business.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const handleAddBusinessClick = () => {
+        if (userEmail) {
+            window.location.href = "/add"; 
+        } else {
+            setIsNoUserPopupOpen(true);
+        }
+    };
+
+    const closeNoUserPopup = () => {
+        setIsNoUserPopupOpen(false);
+    };
+
     return (
         <div className='bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden'>
-            <h1 className='text-center text-2xl font-bold my-4'>
-                Approved Businesses
-            </h1>
-            <div className='container mx-auto mb-4'>
-                <input
-                    type="text"
-                    placeholder="Search for businesses..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className='w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400'
-                />
+          <h1 className='text-center text-2xl font-bold my-4'>
+            Approved Businesses
+          </h1>
+          <div className='container mx-auto mb-4'>
+            <input
+              type="text"
+              placeholder="Search for businesses..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className='w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-blue-400'
+            />
+          </div>
+          <div className='container mx-auto mb-4 flex justify-end'>
+            <button
+              onClick={handleAddBusinessClick}
+              className='py-2 px-4 bg-primary text-white rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300'
+            >
+              Add Business
+            </button>
+          </div>
+          <div className='container mx-auto mb-10'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
+              {filteredBusinesses.map((data) => (
+                <Link to={`/business/${data.id}`} key={data.id}>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay={data.aosDelay}
+                    className='group flex flex-col items-center'>
+                    <div className='relative'>
+                      <img
+                        src={data.img}
+                        alt={data.title}
+                        className='h-180px w-[260px] object-cover rounded-md'
+                      />
+                      {/* hover blur */}
+                      <div className='hidden group-hover:flex absolute top-0 left-0 h-full w-full group-hover:backdrop-blur-sm duration-200'></div>
+                      {/* hover button */}
+                      <div className='hidden group-hover:flex absolute bottom-10 left-1/2 transform -translate-x-1/2'>
+                        <Button
+                          text={"Shop"}
+                          bgColor={"bg-primary"}
+                          textColor={"text-white"}
+                        />
+                      </div>
+                    </div>
+                    <div className='leading-7'>
+                      <h2 className='font-semibold'>{data.title}</h2>
+                      {/* <p className='font-bold'>{data.description}</p> */}
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className='container mx-auto mb-10'>
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
-                    {filteredBusinesses.map((data) => (
-                        <Link to={`/business/${data.id}`} key={data.id}>
-                            <div
-                                data-aos="fade-up"
-                                data-aos-delay={data.aosDelay}
-                                className='group flex flex-col items-center'>
-                                <div className='relative'>
-                                    <img
-                                        src={data.img}
-                                        alt={data.title}
-                                        className='h-180px w-[260px] object-cover rounded-md'
-                                    />
-                                    {/* hover blur */}
-                                    <div className='hidden group-hover:flex absolute top-0 left-0 h-full w-full group-hover:backdrop-blur-sm duration-200'></div>
-                                    {/* hover button */}
-                                    <div className='hidden group-hover:flex absolute bottom-10 left-1/2 transform -translate-x-1/2'>
-                                        <Button
-                                            text={"Shop"}
-                                            bgColor={"bg-primary"}
-                                            textColor={"text-white"}
-                                        />
-                                    </div>
-                                </div>
-                                <div className='leading-7'>
-                                    <h2 className='font-semibold'>{data.title}</h2>
-                                    {/* <p className='font-bold'>{data.description}</p> */}
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+          </div>
+          {message && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
+                <h2 className="text-lg font-semibold mb-4 text-center">Success</h2>
+                <p className="text-gray-800 dark:text-gray-200 text-center">{message}</p>
+                <button
+                  className="mt-4 w-full py-2 bg-primary text-white text-center rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300"
+                  onClick={() => setMessage(null)}
+                >
+                  Close
+                </button>
+              </div>
             </div>
-            <Partners />
-            <Footer />
+          )}
+          {isNoUserPopupOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
+                <h2 className="text-lg font-semibold mb-4 text-center">No User Logged In</h2>
+                <p className="text-gray-800 dark:text-gray-200 text-center">Please sign up or log in to add a business.</p>
+                <Link to="/register" className="mt-4 block w-full py-2 bg-primary text-white text-center rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300" onClick={closeNoUserPopup}>
+                  Sign Up / Login
+                </Link>
+                <button
+                  className="mt-2 w-full py-2 bg-gray-300 rounded hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 duration-300"
+                  onClick={closeNoUserPopup}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
+          <Partners />
+          <Footer />
         </div>
-    );
-}
-
-export default Shop;
+      );
+    }
+    
+    export default Shop;

@@ -6,12 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from './firebase.jsx';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
   const navigate = useNavigate();
 
   const isValidEmail = (email) => {
@@ -19,7 +19,7 @@ const Login = () => {
     return regex.test(email);
   };
 
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isValidEmail(email)) {
       setErrorMessage("Enter a valid email");
@@ -29,12 +29,19 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccessMessage("Login Successful!");
-      navigate('/add');
+      setTimeout(() => {
+        setSuccessMessage('');
+        setIsSuccessPopupOpen(true);
+      }, 1500);
     } catch (err) {
       console.log(err);
       setErrorMessage("Login failed. Check your credentials. Or Create account if you don't have");
       setTimeout(() => setErrorMessage(''), 3000);
     }
+  };
+
+  const closeSuccessPopup = () => {
+    setIsSuccessPopupOpen(false);
   };
 
   return (
@@ -60,6 +67,24 @@ const Login = () => {
       <Blogs />
       <Partners />
       <Footer />
+
+      {/* Success Popup */}
+      {isSuccessPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
+            <h2 className="text-lg font-semibold mb-4 text-center">Login Successful!</h2>
+            <p className="text-gray-800 dark:text-gray-200 text-center mb-4">You are now logged in.</p>
+            <div className="flex justify-around">
+              <Link to="/add" className="py-2 px-4 bg-primary text-white rounded hover:bg-primary-dark duration-300" onClick={closeSuccessPopup}>
+                Add Business
+              </Link>
+              <Link to="/" className="py-2 px-4 bg-gray-300 text-black rounded hover:bg-gray-400 duration-300" onClick={closeSuccessPopup}>
+                Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

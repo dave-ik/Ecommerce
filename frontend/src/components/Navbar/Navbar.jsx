@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoIosContact } from "react-icons/io";
 import DarkMode from './DarkMode';
-import { auth } from 'C:/Users/2122/Desktop/Ecommerce/frontend/src/firebase.jsx';
+import { auth } from '../../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { FaUserTimes, FaUserCheck } from "react-icons/fa";
@@ -90,12 +90,17 @@ const Navbar = ({ handleOrderPopup }) => {
     const [isUserDetailsPopupOpen, setIsUserDetailsPopupOpen] = useState(false);
     const [isNoUserPopupOpen, setIsNoUserPopupOpen] = useState(false);
     const [logoutMessage, setLogoutMessage] = useState('');
-
+    const [loginMessage, setLoginMessage] = useState('');
+    const [registerMessage, setRegisterMessage] = useState('');
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUserEmail(user.email);
+                setLoginMessage('Successfully logged in');
+                setTimeout(() => {
+                    setLoginMessage('');
+                }, 3000);
             } else {
                 setUserEmail(null);
             }
@@ -148,12 +153,11 @@ const Navbar = ({ handleOrderPopup }) => {
             <div className="py-4">
                 <div className="container flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                        <a
-                            href="#"
+                        <Link to="/"
                             className="text-primary font-bold tracking-wide text-2xl sm:text-3xl"
                         >
                             PAUmart
-                        </a>
+                        </Link>
                         <div className="hidden lg:block">
                             <ul className="flex items-center gap-4">
                                 {MenuLinks.map((data) => (
@@ -177,6 +181,12 @@ const Navbar = ({ handleOrderPopup }) => {
                         {logoutMessage && (
                             <div className="text-green-500 text-sm ml-2">{logoutMessage}</div>
                         )}
+                        {loginMessage && (
+                            <div className="text-green-500 text-sm ml-2">{loginMessage}</div>
+                        )}
+                        {registerMessage && (
+                            <div className="text-green-500 text-sm ml-2">{registerMessage}</div>
+                        )}
 
                         <button className='relative p-3' onClick={handleCartClick}>
                             <FaCartShopping className='text-xl text-gray-600 dark:text-gray-400' />
@@ -197,3 +207,4 @@ const Navbar = ({ handleOrderPopup }) => {
 };
 
 export default Navbar;
+
