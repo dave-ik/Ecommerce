@@ -14,6 +14,7 @@ const Register = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+    const [loading, setLoading] = useState(false); 
     const navigate = useNavigate();
 
     const isValidEmail = (email) => {
@@ -28,6 +29,12 @@ const Register = () => {
             setTimeout(() => setErrorMessage(''), 3000);
             return;
         }
+        if (password.length < 6) {
+            setPasswordError("Password should be at least 6 characters");
+            setTimeout(() => setPasswordError(''), 3000);
+            return;
+        }
+        setLoading(true); 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             setSuccessMessage("Account Created");
@@ -43,11 +50,14 @@ const Register = () => {
                 setErrorMessage("Registration failed. Please try again.");
             }
             setTimeout(() => setErrorMessage(''), 3000);
+        } finally {
+            setLoading(false); 
         }
     };
 
     const closeSuccessPopup = () => {
         setIsSuccessPopupOpen(false);
+        navigate('/');
     };
 
     return (
@@ -57,18 +67,42 @@ const Register = () => {
                     <h2 className='text-2xl font-bold mb-4'>Sign Up</h2>
                     <div className='mb-4'>
                         <label htmlFor="email" className='block text-sm font-semibold mb-2'>Email:</label>
-                        <input type="text" id="email" placeholder="Use assigned PAU email address" onChange={(e) => setEmail(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
+                        <input 
+                            type="text" 
+                            id="email" 
+                            placeholder="Use assigned PAU email address" 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' 
+                        />
                     </div>
                     <div className='mb-4'>
                         <label htmlFor="password" className='block text-sm font-semibold mb-2'>Password:</label>
-                        <input type="password" id="password" placeholder="Password should be atleast 6 characters" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Password should be at least 6 characters" 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' 
+                        />
+                        {passwordError && <div className='text-red-600 mt-2'>{passwordError}</div>}
                     </div>
-                    <button type='submit' className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200'>Sign Up</button>
+                    <button 
+                        type='submit' 
+                        className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200'
+                        disabled={loading} 
+                    >
+                        {loading ? 'Registering...' : 'Sign Up'}
+                    </button>
                     <br />
                     {successMessage && <div className='mt-4 p-4 bg-green-100 text-green-800 rounded-md'>{successMessage}</div>}
                     {errorMessage && <div className='mt-4 p-4 bg-red-100 text-red-800 rounded-md'>{errorMessage}</div>}
                     <p className='mt-4 text-sm'>Already Registered? <Link to="/login" className='text-primary hover:underline'>Login</Link></p>
                 </form>
+                {loading && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                        <div className="w-16 h-16 border-4 border-t-4 border-primary rounded-full animate-spin"></div> {/* Spinner */}
+                    </div>
+                )}
             </div>
             <Blogs />
             <Partners />

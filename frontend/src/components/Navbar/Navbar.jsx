@@ -73,7 +73,7 @@ const LogoutPopup = ({ onClose }) => (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-80">
             <h2 className="text-lg font-semibold mb-4 text-center">Logged Out</h2>
-            <p className="text-gray-800 dark:text-gray-200 text-center mb-4">You have been logged out successfully.</p>
+            <p className="text-gray-800 dark:text-gray-200 text-center mb-4">You have been logged out.</p>
             <Link to="/login" className="block w-full py-2 bg-primary text-white text-center rounded hover:bg-primary-dark dark:bg-primary-dark dark:hover:bg-primary-light duration-300" onClick={onClose}>
                 Login
             </Link>
