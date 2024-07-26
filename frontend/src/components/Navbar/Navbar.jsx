@@ -162,7 +162,7 @@ const Navbar = ({ handleOrderPopup }) => {
                 <div className="container flex justify-between items-center">
                     <div className="flex items-center gap-4">
                         <Link to="/" className="text-primary font-bold tracking-wide text-2xl sm:text-3xl">
-                            DAVANNA
+                            PAUmart
                         </Link>
                         <div className="hidden lg:block">
                             <ul className="flex items-center gap-4">

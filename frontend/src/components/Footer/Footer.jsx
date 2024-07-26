@@ -72,7 +72,7 @@ const Footer = () => {
               className="text-primary font-bold tracking-wide test-2xl togglecase sm:text-3xl"
 
             >
-              DAVANNA
+              PAUmart
             </a>
             <div>
               <h3 className="widgettitle">Contact Us</h3>
