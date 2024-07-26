@@ -45,7 +45,7 @@ const Register = () => {
         } catch (err) {
             console.log(err);
             if (err.code === 'auth/email-already-in-use') {
-                setErrorMessage("User exists with this email address, login below");
+                setErrorMessage("User email exists. Login below");
             } else {
                 setErrorMessage("Registration failed. Please try again.");
             }

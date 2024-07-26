@@ -13,6 +13,7 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const isValidEmail = (email) => {
@@ -27,6 +28,7 @@ const Login = () => {
       setTimeout(() => setErrorMessage(''), 3000);
       return;
     }
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccessMessage("Login Successful!");
@@ -37,13 +39,15 @@ const Login = () => {
     } catch (err) {
       console.log(err);
       if (err.code === 'auth/user-not-found') {
-        setErrorMessage("User not found, register below");
+        setErrorMessage("User not found. Register below");
       } else if (err.code === 'auth/wrong-password') {
         setErrorMessage("Incorrect password, try again");
       } else {
-        setErrorMessage("Login failed. Check your credentials or create account below");
+        setErrorMessage("Login failed. Check credentials or Create Account below");
       }
       setTimeout(() => setErrorMessage(''), 3000);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,9 +66,11 @@ const Login = () => {
           </div>
           <div className='mb-4'>
             <label htmlFor="password" className='block text-sm font-semibold mb-2'>Password:</label>
-            <input type="password" id="password" placeholder="Password should be atleast 6 characters" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
+            <input type="password" id="password" placeholder="Password should be at least 6 characters" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
           </div>
-          <button type='submit' className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200'>Login</button>
+          <button type='submit' className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200' disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
           <br />
           {successMessage && <div className='mt-4 p-4 bg-green-100 text-green-800 rounded-md'>{successMessage}</div>}
           {errorMessage && <div className='mt-4 p-4 bg-red-100 text-red-800 rounded-md'>{errorMessage}</div>}
@@ -90,6 +96,13 @@ const Login = () => {
               </Link>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Loading Spinner */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="w-16 h-16 border-4 border-t-4 border-primary rounded-full animate-spin"></div>
         </div>
       )}
     </div>
