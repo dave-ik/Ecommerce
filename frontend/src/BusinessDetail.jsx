@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { BusinessData } from './Shop';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
-import { useCart } from './components/Navbar/CartContext';
+import { useCart } from './components/Navbar/CartContext.jsx';
 
 const BusinessDetail = () => {
   const { id } = useParams();

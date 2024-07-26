@@ -7,7 +7,7 @@ import { auth } from '../../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { Link, useLocation } from 'react-router-dom';
 import { FaUserTimes, FaUserCheck } from "react-icons/fa";
-import { useCart } from 'C:/Users/USER/Desktop/Ecommerce/frontend/src/components/Navbar/CartContext.jsx';
+import { useCart } from '../Navbar/CartContext.jsx'
 
 const MenuLinks = [
     { id: 1, name: "Home", link: "/" },

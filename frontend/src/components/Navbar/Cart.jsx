@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../../context/CartContext';
+import { useCart } from 'frontend/src/components/Navbar/CartContext.jsx';
 
 const Cart = ({ onClose }) => {
     const { cart } = useCart();
