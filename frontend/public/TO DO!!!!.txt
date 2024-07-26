@@ -1,26 +1,14 @@
-TO DO!!!!
-copyable phone numbers and emails
-
-
-
-
-
-
-
 important
 host
 user has to use the same mail in registration/login to make business
 
-add add to cart o product, when product is clicked add, pop uo dd to cart
-cart should clude roducts added to itt
-
-
-number of cart
 
 send form to pau
 functionality such that when approved business can be added to shop page with similar shop with others and when clicked will the it to details page
 
-
+oading
+user exprience
+feedback form
 
 further development
 serach y categfory
@@ -32,3 +20,14 @@ loading functionalities
 
 davidofor@g.com
 1234567890
+
+add loading to:
+footer
+hero
+cart
+navbar
+..products
+add business
+business detailshome
+loginregister
+shop

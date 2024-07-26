@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -35,7 +36,13 @@ const Login = () => {
       }, 1500);
     } catch (err) {
       console.log(err);
-      setErrorMessage("Login failed. Check your credentials. Or Create account if you don't have");
+      if (err.code === 'auth/user-not-found') {
+        setErrorMessage("User not found, register below");
+      } else if (err.code === 'auth/wrong-password') {
+        setErrorMessage("Incorrect password, try again");
+      } else {
+        setErrorMessage("Login failed. Check your credentials or create account below");
+      }
       setTimeout(() => setErrorMessage(''), 3000);
     }
   };
@@ -51,11 +58,11 @@ const Login = () => {
           <h2 className='text-2xl font-bold mb-4'>Login</h2>
           <div className='mb-4'>
             <label htmlFor="email" className='block text-sm font-semibold mb-2'>Email:</label>
-            <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
+            <input type="text" id="email" placeholder="Use assigned PAU email address" onChange={(e) => setEmail(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
           </div>
           <div className='mb-4'>
             <label htmlFor="password" className='block text-sm font-semibold mb-2'>Password:</label>
-            <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
+            <input type="password" id="password" placeholder="Password should be atleast 6 characters" onChange={(e) => setPassword(e.target.value)} className='w-full p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600' />
           </div>
           <button type='submit' className='w-full py-2 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark duration-200'>Login</button>
           <br />

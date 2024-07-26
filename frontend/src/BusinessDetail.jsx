@@ -3,14 +3,17 @@ import { useParams } from 'react-router-dom';
 import { BusinessData } from './Shop';
 import Footer from './components/Footer/Footer.jsx';
 import Partners from './components/Partners/Partners.jsx';
+import { useCart } from './components/Navbar/CartContext';
 
 const BusinessDetail = () => {
   const { id } = useParams();
   const businessId = parseInt(id, 10);
   const business = BusinessData.find((b) => b.id === businessId);
   const [message, setMessage] = useState(null);
+  const { addToCart } = useCart();
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (product) => {
+    addToCart(product);
     setMessage("Successfully added to cart");
     setTimeout(() => setMessage(null), 3000);
   };
@@ -46,7 +49,7 @@ const BusinessDetail = () => {
               <div className='hidden group-hover:flex absolute top-0 left-0 h-full w-full group-hover:backdrop-blur-sm duration-200'></div>
               {/* hover button */}
               <button 
-                onClick={handleAddToCart} 
+                onClick={() => handleAddToCart(product)} 
                 className='hidden group-hover:flex absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-primary text-white py-2 px-4 rounded'>
                 Add to Cart
               </button>
